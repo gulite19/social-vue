@@ -3,7 +3,7 @@ name: Simple Vue CI
 # 触发条件：当你 push 代码到 main 分支时执行
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-test:
