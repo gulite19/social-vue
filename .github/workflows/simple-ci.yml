@@ -1,0 +1,28 @@
+name: Simple Vue CI
+
+# 触发条件：当你 push 代码到 main 分支时执行
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # 借用 GitHub 的 Linux 服务器
+
+    steps:
+      - name: 步骤1：拉取你的代码
+        uses: actions/checkout@v4
+
+      - name: 步骤2：安装 Node.js 环境
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 步骤3：安装依赖包
+        run: npm install
+
+      - name: 步骤4：检查代码规范 (Lint)
+        run: npm run lint # 对应你截图里的 eslint.config.ts
+
+      - name: 步骤5：尝试打包项目
+        run: npm run build

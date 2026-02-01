@@ -1,7 +1,7 @@
 services:
   social-vue:
-    build: .
-    image: social-vue:latest
+    image: dockerhub用户名/social-vue:latest
+    container_name: social-vue
     ports:
-      - "3000:80"
+      - "80:80"
     restart: unless-stopped
